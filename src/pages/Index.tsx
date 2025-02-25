@@ -7,17 +7,21 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-background text-foreground p-6">
-      <div className="max-w-[420px] mx-auto space-y-6 animate-fade-in">
+      <div className="max-w-[380px] mx-auto space-y-4 animate-fade-in">
         {/* Header */}
         <div className="flex justify-between items-center">
-          <div className="text-primary font-bold text-3xl">R</div>
+          <img 
+            src="/lovable-uploads/d34fa564-564f-4bcf-94b4-b3afae44d202.png" 
+            alt="Return Logo" 
+            className="h-8 w-8"
+          />
           <button className="text-muted-foreground hover:text-foreground transition-colors">
             <X size={20} />
           </button>
         </div>
 
         {/* Status Card */}
-        <div className="glass p-6 rounded-lg card-glow">
+        <div className="glass p-4 rounded-lg card-glow">
           <h2 className="text-xl font-semibold mb-2">Current PC status</h2>
           <p className="text-primary font-medium">{status}</p>
         </div>
@@ -29,9 +33,7 @@ const Index = () => {
         </button>
 
         {/* Optimizations Section */}
-        <div className="space-y-4">
-          <h3 className="text-2xl font-semibold px-1">Available optimizations</h3>
-          
+        <div className="space-y-3">
           <button className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
             <div className="space-y-1 text-left">
               <div className="font-semibold flex items-center gap-2">
@@ -78,7 +80,7 @@ const Index = () => {
         </div>
 
         {/* Version Info */}
-        <p className="text-xs text-muted-foreground text-center pt-4 font-normal">
+        <p className="text-xs text-muted-foreground text-center pt-2 font-normal">
           v9.0 © 2023-2024 Return™. All rights reserved.
         </p>
       </div>
