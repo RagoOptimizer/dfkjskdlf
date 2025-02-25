@@ -10,7 +10,7 @@ const Index = () => {
       <div className="max-w-[420px] mx-auto space-y-6 animate-fade-in">
         {/* Header */}
         <div className="flex justify-between items-center">
-          <div className="text-primary font-bold text-2xl">R</div>
+          <div className="text-primary font-bold text-3xl">R</div>
           <button className="text-muted-foreground hover:text-foreground transition-colors">
             <X size={20} />
           </button>
@@ -18,19 +18,19 @@ const Index = () => {
 
         {/* Status Card */}
         <div className="glass p-6 rounded-lg card-glow">
-          <h2 className="text-lg font-semibold mb-2">Current PC status</h2>
-          <p className="text-primary">{status}</p>
+          <h2 className="text-xl font-semibold mb-2">Current PC status</h2>
+          <p className="text-primary font-medium">{status}</p>
         </div>
 
         {/* Settings Button */}
         <button className="glass w-full p-4 rounded-lg flex justify-between items-center card-glow">
-          <span className="font-semibold">Settings</span>
+          <span className="font-medium">Settings</span>
           <Settings className="text-muted-foreground" size={20} />
         </button>
 
         {/* Optimizations Section */}
         <div className="space-y-4">
-          <h3 className="text-xl font-semibold px-1">Available optimizations</h3>
+          <h3 className="text-2xl font-semibold px-1">Available optimizations</h3>
           
           <button className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
             <div className="space-y-1 text-left">
@@ -38,7 +38,7 @@ const Index = () => {
                 <Cpu className="text-primary" size={20} />
                 Performance
               </div>
-              <p className="text-sm text-muted-foreground">Get the best possible performance.</p>
+              <p className="text-sm text-muted-foreground font-normal">Get the best possible performance.</p>
             </div>
             <div className="text-muted-foreground group-hover:text-primary transition-colors">→</div>
           </button>
@@ -49,7 +49,7 @@ const Index = () => {
                 <Network className="text-primary" size={20} />
                 Network
               </div>
-              <p className="text-sm text-muted-foreground">Optimize gameplay data packets.</p>
+              <p className="text-sm text-muted-foreground font-normal">Optimize gameplay data packets.</p>
             </div>
             <div className="text-muted-foreground group-hover:text-primary transition-colors">→</div>
           </button>
@@ -60,7 +60,7 @@ const Index = () => {
                 <Clock className="text-primary" size={20} />
                 Input Lag
               </div>
-              <p className="text-sm text-muted-foreground">Decrease peripheral response time.</p>
+              <p className="text-sm text-muted-foreground font-normal">Decrease peripheral response time.</p>
             </div>
             <div className="text-muted-foreground group-hover:text-primary transition-colors">→</div>
           </button>
@@ -71,14 +71,14 @@ const Index = () => {
                 <Zap className="text-primary" size={20} />
                 Power Plan
               </div>
-              <p className="text-sm text-muted-foreground">Balance performance and power usage.</p>
+              <p className="text-sm text-muted-foreground font-normal">Balance performance and power usage.</p>
             </div>
             <div className="text-muted-foreground group-hover:text-primary transition-colors">→</div>
           </button>
         </div>
 
         {/* Version Info */}
-        <p className="text-xs text-muted-foreground text-center pt-4">
+        <p className="text-xs text-muted-foreground text-center pt-4 font-normal">
           v9.0 © 2023-2024 Return™. All rights reserved.
         </p>
       </div>

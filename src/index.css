@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 231 26% 13%;
+    --background: 201 96% 32%;
     --foreground: 0 0% 98%;
     
-    --card: 232 23% 18%;
+    --card: 205 39% 14%;
     --card-foreground: 0 0% 98%;
     
-    --popover: 232 23% 18%;
+    --popover: 205 39% 14%;
     --popover-foreground: 0 0% 98%;
     
-    --primary: 251 89% 74%;
+    --primary: 357 82% 57%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 232 23% 23%;
+    --secondary: 205 39% 14%;
     --secondary-foreground: 0 0% 98%;
     
-    --muted: 232 23% 23%;
+    --muted: 205 39% 14%;
     --muted-foreground: 217 8% 70%;
     
-    --accent: 251 89% 74%;
+    --accent: 357 82% 57%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 232 23% 23%;
-    --input: 232 23% 23%;
-    --ring: 251 89% 74%;
+    --border: 205 39% 14%;
+    --input: 205 39% 14%;
+    --ring: 357 82% 57%;
 
     --radius: 0.75rem;
   }
@@ -46,17 +46,17 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-card/30 backdrop-blur-md border border-white/10;
+    @apply bg-card/50 backdrop-blur-md border border-white/10 shadow-lg;
   }
   
   .card-glow {
-    @apply hover:shadow-[0_0_30px_rgba(155,135,245,0.1)] transition-shadow duration-300;
+    @apply hover:shadow-[0_0_30px_rgba(0,118,189,0.3)] transition-all duration-300;
   }
   
   .text-gradient {
