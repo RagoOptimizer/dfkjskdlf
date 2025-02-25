@@ -18,10 +18,10 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        background: "#1E273B",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#F22B29",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -37,7 +37,7 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
+          DEFAULT: "#F22B29",
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {

@@ -7,22 +7,22 @@
 
 @layer base {
   :root {
-    --background: 205 39% 14%;
+    --background: 213 32% 17%;
     --foreground: 0 0% 98%;
     
-    --card: 205 39% 14%;
+    --card: 213 32% 17%;
     --card-foreground: 0 0% 98%;
     
-    --popover: 205 39% 14%;
+    --popover: 213 32% 17%;
     --popover-foreground: 0 0% 98%;
     
     --primary: 357 82% 57%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 205 39% 14%;
+    --secondary: 213 32% 17%;
     --secondary-foreground: 0 0% 98%;
     
-    --muted: 205 39% 14%;
+    --muted: 213 32% 17%;
     --muted-foreground: 217 8% 70%;
     
     --accent: 357 82% 57%;
@@ -31,8 +31,8 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 205 39% 14%;
-    --input: 205 39% 14%;
+    --border: 213 32% 17%;
+    --input: 213 32% 17%;
     --ring: 357 82% 57%;
 
     --radius: 0.75rem;
@@ -53,10 +53,31 @@
 @layer utilities {
   .glass {
     @apply bg-card/50 backdrop-blur-md border border-white/10 shadow-lg;
+    background-image: linear-gradient(125deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 100%);
   }
   
   .card-glow {
-    @apply hover:shadow-[0_0_30px_rgba(0,118,189,0.3)] transition-all duration-300;
+    @apply hover:shadow-[0_0_30px_rgba(242,43,41,0.15)] transition-all duration-300;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card-glow::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    transform: rotate(0deg);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+  }
+  
+  .card-glow:hover::before {
+    opacity: 1;
+    transform: rotate(45deg);
   }
   
   .text-gradient {
