@@ -1,10 +1,18 @@
 
 import { Settings, Cpu, Network, Clock, Zap, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
-  const [status, setStatus] = useState("100% Optimized");
+  const [percentage, setPercentage] = useState(0);
+  const status = "Optimized";
   
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPercentage(100);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground p-6">
       <div className="max-w-[380px] mx-auto space-y-4 animate-fade-in">
@@ -23,13 +31,15 @@ const Index = () => {
         {/* Status Card */}
         <div className="glass p-4 rounded-lg card-glow">
           <h2 className="text-xl font-semibold mb-2">Current PC status</h2>
-          <p className="text-primary font-medium">{status}</p>
+          <p className="text-primary font-medium">
+            <span className="percentage">{percentage}%</span> {status}
+          </p>
         </div>
 
         {/* Settings Button */}
-        <button className="glass w-full p-4 rounded-lg flex justify-between items-center card-glow">
+        <button className="glass w-full p-4 rounded-lg flex justify-between items-center card-glow settings-btn">
           <span className="font-medium">Settings</span>
-          <Settings className="text-muted-foreground" size={20} />
+          <Settings className="text-muted-foreground settings-icon" size={20} />
         </button>
 
         {/* Optimizations Section */}
@@ -81,7 +91,7 @@ const Index = () => {
 
         {/* Version Info */}
         <p className="text-xs text-muted-foreground text-center pt-2 font-normal">
-          v9.0 © 2023-2024 Return™. All rights reserved.
+          2025© Rago. All rights reserved.
         </p>
       </div>
     </div>
