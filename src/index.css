@@ -57,7 +57,7 @@
   }
   
   .card-glow {
-    @apply hover:shadow-[0_0_40px_rgba(242,43,41,0.25)] transition-all duration-300;
+    @apply hover:shadow-[0_0_25px_rgba(242,43,41,0.35)] hover:bg-[#F22B29]/5 hover:border-[#F22B29]/30 transition-all duration-300 scale-100 hover:scale-[1.02];
     position: relative;
     overflow: hidden;
   }
@@ -69,7 +69,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 70%);
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
     transform: rotate(0deg);
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.5s ease;
@@ -81,15 +81,24 @@
   }
 
   .settings-icon {
-    @apply transition-transform duration-300;
+    @apply transition-transform duration-700 text-muted-foreground;
   }
 
   .settings-btn:hover .settings-icon {
+    @apply text-primary;
     transform: rotate(180deg);
   }
   
   .text-gradient {
     @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .status-text {
+    @apply select-none;
+  }
+
+  .arrow-icon {
+    @apply text-2xl rounded-full;
   }
 
   @keyframes count-up {
@@ -101,8 +110,27 @@
     }
   }
 
+  .percentage {
+    @apply relative;
+  }
+
   .percentage::before {
-    content: "100%";
-    animation: count-up 2s ease-out;
+    content: "";
+    animation: count-up 2s ease-out forwards;
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out forwards;
   }
 }

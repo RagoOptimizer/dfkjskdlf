@@ -30,16 +30,16 @@ const Index = () => {
 
         {/* Status Card */}
         <div className="glass p-4 rounded-lg card-glow">
-          <h2 className="text-xl font-semibold mb-2">Current PC status</h2>
-          <p className="text-primary font-medium">
-            <span className="percentage">{percentage}%</span> {status}
+          <h2 className="text-xl font-semibold mb-2 status-text">Current PC status</h2>
+          <p className="text-primary font-medium status-text animate-slide-up">
+            {percentage}% {status}
           </p>
         </div>
 
         {/* Settings Button */}
         <button className="glass w-full p-4 rounded-lg flex justify-between items-center card-glow settings-btn">
           <span className="font-medium">Settings</span>
-          <Settings className="text-muted-foreground settings-icon" size={20} />
+          <Settings className="settings-icon" size={20} />
         </button>
 
         {/* Optimizations Section */}
@@ -52,7 +52,7 @@ const Index = () => {
               </div>
               <p className="text-sm text-muted-foreground font-normal">Get the best possible performance.</p>
             </div>
-            <div className="text-muted-foreground group-hover:text-primary transition-colors">→</div>
+            <div className="text-muted-foreground group-hover:text-primary transition-colors text-2xl rounded-full">→</div>
           </button>
 
           <button className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
@@ -63,7 +63,7 @@ const Index = () => {
               </div>
               <p className="text-sm text-muted-foreground font-normal">Optimize gameplay data packets.</p>
             </div>
-            <div className="text-muted-foreground group-hover:text-primary transition-colors">→</div>
+            <div className="text-muted-foreground group-hover:text-primary transition-colors text-2xl rounded-full">→</div>
           </button>
 
           <button className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
@@ -74,7 +74,7 @@ const Index = () => {
               </div>
               <p className="text-sm text-muted-foreground font-normal">Decrease peripheral response time.</p>
             </div>
-            <div className="text-muted-foreground group-hover:text-primary transition-colors">→</div>
+            <div className="text-muted-foreground group-hover:text-primary transition-colors text-2xl rounded-full">→</div>
           </button>
 
           <button className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
@@ -85,7 +85,7 @@ const Index = () => {
               </div>
               <p className="text-sm text-muted-foreground font-normal">Balance performance and power usage.</p>
             </div>
-            <div className="text-muted-foreground group-hover:text-primary transition-colors">→</div>
+            <div className="text-muted-foreground group-hover:text-primary transition-colors text-2xl rounded-full">→</div>
           </button>
         </div>
 
