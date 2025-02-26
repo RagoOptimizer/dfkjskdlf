@@ -29,9 +29,9 @@ const Index = () => {
         </div>
 
         {/* Status Card */}
-        <div className="glass p-4 rounded-lg card-glow">
+        <div className="status-card p-4">
           <h2 className="text-xl font-semibold mb-2 status-text">Current PC status</h2>
-          <p className="text-primary font-medium status-text animate-slide-up">
+          <p className="text-primary font-medium status-text animate-status">
             {percentage}% {status}
           </p>
         </div>
@@ -44,49 +44,23 @@ const Index = () => {
 
         {/* Optimizations Section */}
         <div className="space-y-3">
-          <button className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
-            <div className="space-y-1 text-left">
-              <div className="font-semibold flex items-center gap-2">
-                <Cpu className="text-primary" size={20} />
-                Performance
+          {[
+            { icon: Cpu, title: "Performance", desc: "Get the best possible performance." },
+            { icon: Network, title: "Network", desc: "Optimize gameplay data packets." },
+            { icon: Clock, title: "Input Lag", desc: "Decrease peripheral response time." },
+            { icon: Zap, title: "Power Plan", desc: "Balance performance and power usage." }
+          ].map((item, index) => (
+            <button key={index} className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
+              <div className="space-y-1 text-left">
+                <div className="font-semibold flex items-center gap-2">
+                  <item.icon className="text-primary" size={20} />
+                  {item.title}
+                </div>
+                <p className="text-sm text-muted-foreground font-normal">{item.desc}</p>
               </div>
-              <p className="text-sm text-muted-foreground font-normal">Get the best possible performance.</p>
-            </div>
-            <div className="text-muted-foreground group-hover:text-primary transition-colors text-2xl rounded-full">→</div>
-          </button>
-
-          <button className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
-            <div className="space-y-1 text-left">
-              <div className="font-semibold flex items-center gap-2">
-                <Network className="text-primary" size={20} />
-                Network
-              </div>
-              <p className="text-sm text-muted-foreground font-normal">Optimize gameplay data packets.</p>
-            </div>
-            <div className="text-muted-foreground group-hover:text-primary transition-colors text-2xl rounded-full">→</div>
-          </button>
-
-          <button className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
-            <div className="space-y-1 text-left">
-              <div className="font-semibold flex items-center gap-2">
-                <Clock className="text-primary" size={20} />
-                Input Lag
-              </div>
-              <p className="text-sm text-muted-foreground font-normal">Decrease peripheral response time.</p>
-            </div>
-            <div className="text-muted-foreground group-hover:text-primary transition-colors text-2xl rounded-full">→</div>
-          </button>
-
-          <button className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
-            <div className="space-y-1 text-left">
-              <div className="font-semibold flex items-center gap-2">
-                <Zap className="text-primary" size={20} />
-                Power Plan
-              </div>
-              <p className="text-sm text-muted-foreground font-normal">Balance performance and power usage.</p>
-            </div>
-            <div className="text-muted-foreground group-hover:text-primary transition-colors text-2xl rounded-full">→</div>
-          </button>
+              <span className="arrow-icon text-muted-foreground group-hover:text-primary transition-colors">⟶</span>
+            </button>
+          ))}
         </div>
 
         {/* Version Info */}
