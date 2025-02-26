@@ -21,7 +21,7 @@ const Index = () => {
           <img 
             src="/lovable-uploads/d34fa564-564f-4bcf-94b4-b3afae44d202.png" 
             alt="Return Logo" 
-            className="h-8 w-8"
+            className="h-9 w-9"
           />
           <button className="text-muted-foreground hover:text-foreground transition-colors">
             <X size={20} />
