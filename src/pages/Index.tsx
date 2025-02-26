@@ -1,8 +1,10 @@
 
 import { Settings, Cpu, Network, Clock, Zap, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [percentage, setPercentage] = useState(0);
   const status = "Optimized";
   
@@ -45,12 +47,16 @@ const Index = () => {
         {/* Optimizations Section */}
         <div className="space-y-3">
           {[
-            { icon: Cpu, title: "Performance", desc: "Get the best possible performance." },
+            { icon: Cpu, title: "Performance", desc: "Get the best possible performance.", path: "/performance" },
             { icon: Network, title: "Network", desc: "Optimize gameplay data packets." },
             { icon: Clock, title: "Input Lag", desc: "Decrease peripheral response time." },
             { icon: Zap, title: "Power Plan", desc: "Balance performance and power usage." }
           ].map((item, index) => (
-            <button key={index} className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow">
+            <button 
+              key={index} 
+              className="glass w-full p-4 rounded-lg flex justify-between items-center group card-glow"
+              onClick={() => item.path && navigate(item.path)}
+            >
               <div className="space-y-1 text-left">
                 <div className="font-semibold flex items-center gap-2">
                   <item.icon className="text-primary" size={20} />

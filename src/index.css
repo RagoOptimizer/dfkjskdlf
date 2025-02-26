@@ -61,6 +61,11 @@
     position: relative;
   }
 
+  .card-glow-white {
+    @apply hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300 scale-100 hover:scale-[1.02];
+    position: relative;
+  }
+
   .status-card {
     @apply glass rounded-lg cursor-default;
     pointer-events: none;
@@ -89,6 +94,23 @@
     animation-fill-mode: forwards;
   }
 
+  .animate-glow {
+    animation: cardGlow 2s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 10s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   @keyframes slideUp {
     from {
       transform: translateY(10px);
@@ -110,6 +132,18 @@
     }
     100% {
       text-shadow: 0 0 5px rgba(242, 43, 41, 0.3);
+    }
+  }
+
+  @keyframes cardGlow {
+    0% {
+      box-shadow: 0 0 5px rgba(242, 43, 41, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(242, 43, 41, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(242, 43, 41, 0.3);
     }
   }
 
